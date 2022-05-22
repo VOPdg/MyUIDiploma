@@ -11,12 +11,12 @@ import static java.lang.Thread.sleep;
 
 
 @Tag("ABO")
-public class OrderStepsTest {
+public class OrderStepsTest extends TestBase {
 
     @Test
     void makeOrderTest() throws InterruptedException {
         step("Open page", () -> {
-            open("https://abo.bvg.de/de/");
+            open("");
             $("#cmpwelcomebtnyes").click();
         });
         step("Choose the ticket", () -> {
