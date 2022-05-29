@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "${JOB_BASE_NAME}",
+    "environment": "some env",
+    "comment": "some comment",
+    "reportLink": "${BUILD_URL}",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "/var/folders/lk/strmchvs5_gf761gjwwjzbqc0000gp/T/8885723712366749247/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5313680068:AAFz-_lqSDo6WalMKPXjJT9jYae4f4bR7yk",
+    "chat": "-1001772973156",
+    "replyTo": ""
+  }
+}
