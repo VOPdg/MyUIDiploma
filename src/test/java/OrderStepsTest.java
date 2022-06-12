@@ -1,8 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -12,13 +10,20 @@ import static java.lang.Thread.sleep;
 
 
 @Tag("ABO")
+@Owner("Veronika Pdg")
+
 public class OrderStepsTest extends TestBase {
-    @Test
-    void checkAbilityToMakeOrder() {
+    @BeforeEach
+    void openPage() {
         step("Open page", () -> {
             open("");
             $("#cmpwelcomebtnyes").click();
         });
+
+    }
+
+    @Test
+    void checkAbilityToMakeOrder() {
         step("Check Abo bestellen item", () -> {
             $("#nav_text_collapse").shouldHave(text("Abo bestellen"));
         });
@@ -26,9 +31,7 @@ public class OrderStepsTest extends TestBase {
 
     @Test
     void opportunityToGoToOrderPage() {
-        step("Open page", () -> {
-            open("");
-            $("#cmpwelcomebtnyes").click();
+        step("Start Order", () -> {
             $("#nav_text_collapse").$(byText("Abo bestellen")).click();
             sleep(5000);
         });
@@ -39,10 +42,6 @@ public class OrderStepsTest extends TestBase {
 
     @Test
     void checkAvailableZone() {
-        step("Open page", () -> {
-            open("");
-            $("#cmpwelcomebtnyes").click();
-        });
         step("Choose the ticket", () -> {
             $("#nav_text_collapse").$(byText("Abo bestellen")).click();
             sleep(5000);
@@ -50,16 +49,13 @@ public class OrderStepsTest extends TestBase {
         });
         step("Check necessary Zone Berlin ABC", () -> {
             $(".button-list-block").$(byText("Berlin ABC")).click();
-             Assertions.assertEquals("Berlin ABC", $(".sub-row-item").$("input").getValue());
+            Assertions.assertEquals("Berlin ABC", $(".sub-row-item").$("input").getValue());
         });
 
     }
+
     @Test
-    void checkTheZipCity(){
-        step("Open page", () -> {
-            open("");
-            $("#cmpwelcomebtnyes").click();
-        });
+    void checkTheZipCity() {
         step("Choose the ticket", () -> {
             $("#nav_text_collapse").$(byText("Abo bestellen")).click();
             sleep(5000);
@@ -86,10 +82,6 @@ public class OrderStepsTest extends TestBase {
 
     @Test
     void makeOrderTest() throws InterruptedException {
-        step("Open page", () -> {
-            open("");
-            $("#cmpwelcomebtnyes").click();
-        });
         step("Choose the ticket", () -> {
             $("#nav_text_collapse").$(byText("Abo bestellen")).click();
             sleep(5000);
