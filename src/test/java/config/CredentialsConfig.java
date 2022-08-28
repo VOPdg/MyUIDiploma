@@ -15,4 +15,7 @@ public interface CredentialsConfig extends Config {
 
     @Key("remoteUrl")
     String remoteUrl();
+
+    @DefaultValue("false")
+    boolean remote();
 }

@@ -7,11 +7,19 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.BankDataOrderPage;
+import pages.OrderPage;
+import pages.PersDataOrderPage;
+import pages.StartPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestBase {
+    StartPage startPage = new StartPage();
+    OrderPage orderPage = new OrderPage();
+    PersDataOrderPage persDataOrderPage = new PersDataOrderPage();
+    BankDataOrderPage bankDataOrderPage = new BankDataOrderPage();
 
     @BeforeAll
     static void beforeAll() {
@@ -22,17 +30,18 @@ public class TestBase {
         Configuration.pageLoadTimeout = 80000;
         Configuration.browserVersion = System.getProperty("version", "99");
 
-        //password and user for remote browser
-        String user = config.user();
-        String password = config.password();
-        String remoteUrl = config.remoteUrl();
+        if (config.remote()) {
+            //password and user for remote browser
+            String user = config.user();
+            String password = config.password();
+            String remoteUrl = config.remoteUrl();
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://" + user + ":" + password + "@" + remoteUrl;
-
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
+            Configuration.remote = "https://" + user + ":" + password + "@" + remoteUrl;
+        }
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
