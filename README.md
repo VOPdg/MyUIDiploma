@@ -25,7 +25,7 @@
 </p>
 
 ## :robot: Сборки в Jenkins
-### <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_12_13_Jenkinsjob_abo/">Параметризированная сборка в Jenkins со всеми тестами</a>
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_Jenkinsjob_MyUIDiploma/">Параметризированная сборка в Jenkins со всеми тестами</a>
 <p align="center">
 <img title="Jenkins Job Run with parameters" src="images/screenshots/Screenshot 2022-05-29 at 23.52.25.png">
 </p>
