@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Assertions;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class OrderPage {
     SelenideElement wrapper = $(".wrapper"),
@@ -29,6 +28,7 @@ public class OrderPage {
     @Step("Check necessary Zone Berlin ABC")
     public void checkZone(String value) {
         zone.$(byText(value)).click();
+        sleep(2000);
         Assertions.assertEquals(value, $(".sub-row-item").$("input").getValue());
     }
 
