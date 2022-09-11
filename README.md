@@ -27,18 +27,6 @@
 <img width="6%" title="Telegram" src="images/logo/Telegram.svg">
 </p>
 
-## :robot: Сборки в Jenkins
-### <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_Jenkinsjob_MyUIDiploma/">Параметризированная сборка в Jenkins со всеми тестами</a>
-<p align="center">
-<img title="Jenkins Job Run with parameters" src="images/screenshots/Screenshot 2022-05-29 at 23.52.25.png">
-</p>
-
-
-<p align="center">
-<img title="Jenkins Dashboard" src="images/screenshots/Screenshot 2022-05-29 at 23.53.10.png">
-</p>
-
-
 
 ## :keyboard: Запуск из терминала
 Локальный запуск всех тестов:
@@ -57,6 +45,16 @@ ABO
 -Dversion="${VERSION}"
 ```
 
+## :robot: Сборки в Jenkins
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_Jenkinsjob_MyUIDiploma/">Параметризированная сборка в Jenkins со всеми тестами</a>
+<p align="center">
+<img title="Jenkins Job Run with parameters" src="images/screenshots/Screenshot 2022-05-29 at 23.52.25.png">
+</p>
+
+
+<p align="center">
+<img title="Jenkins Dashboard" src="images/screenshots/Screenshot 2022-05-29 at 23.53.10.png">
+</p>
 
 
 ## :bar_chart: Allure отчет
