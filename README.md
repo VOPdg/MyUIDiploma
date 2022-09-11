@@ -1,5 +1,8 @@
 # Автоматизация тестирования заказа билета на сайте https://abo.bvg.de/de/
 ## :link: <a target="_blank" href="https://abo.bvg.de/de/">bvg.de - BVG Abo online abschließen | BVG</a>
+<p align="center">
+<img title="Wiki img" src="images/picture/download.png">
+</p>
 
 ## :page_with_curl: Содержание:
 
