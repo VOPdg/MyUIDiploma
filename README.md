@@ -6,7 +6,7 @@
 
 ## :page_with_curl: Содержание:
 
-- <a href="#computer-сode_stack">Технологии и инструменты</a>
+- <a href="#computer-Технологии-и-инструменты">Технологии и инструменты</a>
 - <a href="#robot-сборки-в-Jenkins">Сборки в Jenkins</a>
 - <a href="#keyboard-запуск-из-терминала">Запуск из терминала</a>
 - <a href="#bar_chart-allure-отчет">Allure отчет</a>
