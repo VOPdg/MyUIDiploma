@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -28,12 +29,11 @@ public class OrderPage {
     @Step("Check necessary Zone Berlin ABC")
     public void checkZone(String value) {
         zone.$(byText(value)).click();
-        sleep(2000);
-        Assertions.assertEquals(value, $(".sub-row-item").$("input").getValue());
+        $(".sub-row-item input").shouldHave(value(value));
     }
 
     @Step("Go to Personal data page")
     public void personalDataStep() {
-        $(".price-next-step").$("button").click();
+        $(".price-next-step button").click();
     }
 }

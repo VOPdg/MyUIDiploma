@@ -12,12 +12,12 @@ import static com.codeborne.selenide.Selenide.open;
 public class StartPage {
     SelenideElement
             startOrderButton = $("#nav_text_collapse"),
-            acceptAllCookieBytton = $("#cmpwelcomebtnyes");
+            acceptAllCookieButton = $("#cmpwelcomebtnyes");
 
     @Step("Open page")
     public StartPage openPage() {
         open("");
-        acceptAllCookieBytton.click();
+        acceptAllCookieButton.click();
         return this;
     }
 
@@ -31,5 +31,4 @@ public class StartPage {
         startOrderButton.$(byText("Abo bestellen")).click();
         Selenide.sleep(5000);
     }
-
 }

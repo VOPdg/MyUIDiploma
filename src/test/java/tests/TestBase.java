@@ -26,7 +26,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-        Configuration.baseUrl = "https://abo.bvg.de/de/";
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://abo.bvg.de/de/");
         Configuration.browserSize = System.getProperty("size", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.pageLoadTimeout = 80000;
@@ -53,7 +53,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-        sleep(5000);
         closeWebDriver();
     }
 }

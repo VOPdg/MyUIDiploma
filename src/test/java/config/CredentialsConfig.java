@@ -7,13 +7,10 @@ import org.aeonbits.owner.Config;
 })
 public interface CredentialsConfig extends Config {
 
-    @Key("user")
     String user();
 
-    @Key("password")
     String password();
 
-    @Key("remoteUrl")
     String remoteUrl();
 
     @DefaultValue("false")

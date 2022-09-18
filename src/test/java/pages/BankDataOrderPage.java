@@ -10,19 +10,15 @@ public class BankDataOrderPage {
     SelenideElement iban = $("[name=iban]"),
             nextStepButton = $("#nextStep");
 
-
     @Step("Set IBAN")
     public void setIban(String value) {
         iban.setValue(value);
-
-
     }
 
     @Step("Go to next step")
     public void clickNextButton() {
         $(".row-check").$(".checkbox-component").click();
         nextStepButton.click();
-
     }
 
     @Step("Check the Anmelden")

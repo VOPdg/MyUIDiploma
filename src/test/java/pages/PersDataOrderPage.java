@@ -21,42 +21,42 @@ public class PersDataOrderPage {
             confirmCheckbox = $$(".form-block").findBy(text("Rechtliches")),
             nextStepButton = $("#nextStep");
 
-    @Step("Set title")
+    @Step("Set title: {value}")
     public void setTitle(String value) {
         titleDropdown.$("[role=combobox]").$("[placeholder='Bitte wählen']").sendKeys("");
         titleDropdown.$("[role=listbox]").$(byText(value)).click();
     }
 
-    @Step("Set Name")
+    @Step("Set name: {firstName} {lastName}")
     public void setName(String firstName, String lastName) {
         firstNameInput.setValue(firstName);
         lastNameInput.setValue(lastName);
     }
 
-    @Step("Set Birth")
+    @Step("Set birth: {value}")
     public void setBirthday(String value) {
         birthdayInput.setValue(value);
     }
 
-    @Step("Check Zip and City")
+    @Step("Check zip and city: {value}")
     public void checkZip(String value) {
         zipCityDropdown.$("[role=combobox]").$("[placeholder='PLZ auswählen / Ort auswählen']").setValue(value);
         zipCityDropdown.$("[role=listbox]").shouldHave(text(value));
     }
 
-    @Step("Set Zip and City")
+    @Step("Set zip and city: {value}")
     public void setZip(String value) {
         zipCityDropdown.$("[role=combobox]").$("[placeholder='PLZ auswählen / Ort auswählen']").setValue(value);
         zipCityDropdown.$("[role=listbox]").$$("li").first().click();
     }
 
-    @Step("Set Street")
+    @Step("Set street: {value}")
     public void setStreet(String value) {
         streetDropdown.$("[placeholder='Straße auswählen']").setValue(value);
         streetDropdown.$("[role=listbox]").$$("li").first().click();
     }
 
-    @Step("Set Number of the house")
+    @Step("Set number house: {value}")
     public void setHouse(String value) {
         streetNumberInput.setValue(value);
     }
@@ -67,5 +67,4 @@ public class PersDataOrderPage {
         confirmCheckbox.$(".checkbox-component").click();
         nextStepButton.click();
     }
-
 }
