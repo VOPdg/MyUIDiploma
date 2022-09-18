@@ -23,6 +23,6 @@ public class BankDataOrderPage {
 
     @Step("Check the Anmelden")
     public void checkNextStep() {
-        $("#kc-page-title").shouldHave(text("Anmelden"));
+        $("#kc-page-title").shouldHave(text("Anmeldung"));
     }
 }
