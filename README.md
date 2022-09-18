@@ -47,6 +47,7 @@ abotests
 -DanyText="${ANY_TEXT}"
 -Dsize="${SIZE}"
 -Dversion="${VERSION}"
+-DbaseUrl="${BASEURL}"
 ```
 
 ## :robot: Сборки в Jenkins
